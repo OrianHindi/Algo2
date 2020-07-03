@@ -38,7 +38,7 @@ public class BFS {
             }
             color[v]=black;
         }
-        return color;
+        return dist;
     }
 
     /**
