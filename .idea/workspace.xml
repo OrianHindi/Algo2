@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71ee9411-dc73-4ca9-a07f-d16a771a3d85" name="Default Changelist" comment="" />
+    <list default="true" id="71ee9411-dc73-4ca9-a07f-d16a771a3d85" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algo2 Codes/Best.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algo2 Codes/Best.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algo2 Codes/Bottle_Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algo2 Codes/Bottle_Problem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algo2 Codes/Foo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algo2 Codes/Help.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Best.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Best.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bottle_Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bottle_Problem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MaxSumSubMat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MaxSumSubMat.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +41,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1afUxUeP3h84tDfNBCSz6lJtkb8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -37,23 +53,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../The-Maze-Of-Waze" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Help">
-    <configuration name="Best" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Best" />
+  <component name="RunManager" selected="Application.BFS">
+    <configuration name="BFS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BFS" />
       <module name="Algo2 Codes" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Bottle_Problem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Bottle_Problem" />
+    <configuration name="Dijakstra" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Dijakstra" />
       <module name="Algo2 Codes" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,11 +99,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Help" />
+        <item itemvalue="Application.BFS" />
         <item itemvalue="Application.MaxSumSubMat" />
         <item itemvalue="Application.FuelStation" />
-        <item itemvalue="Application.Best" />
-        <item itemvalue="Application.Bottle_Problem" />
+        <item itemvalue="Application.Dijakstra" />
+        <item itemvalue="Application.Help" />
       </list>
     </recent_temporary>
   </component>
@@ -122,7 +139,7 @@
       <workItem from="1592136537623" duration="601000" />
       <workItem from="1592657355967" duration="29531000" />
       <workItem from="1593183328880" duration="3214000" />
-      <workItem from="1593340596376" duration="5717000" />
+      <workItem from="1593340596376" duration="27944000" />
     </task>
     <servers />
   </component>
@@ -138,41 +155,52 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="297" width="403" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1593344146517" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1592991054975">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1593697658616">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592991054975" />
-    <state width="1478" height="206" key="GridCell.Tab.0.bottom" timestamp="1593686153557">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593697658616" />
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1593710777946">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.-303.1920.1040@0.0.1536.824" timestamp="1592847775062" />
-    <state width="1478" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593686153557" />
-    <state width="1478" height="206" key="GridCell.Tab.0.center" timestamp="1593686153557">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593710777946" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1593710777945">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824/-1920.-303.1920.1040@0.0.1536.824" timestamp="1592847775062" />
-    <state width="1478" height="206" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593686153557" />
-    <state width="1478" height="206" key="GridCell.Tab.0.left" timestamp="1593686153556">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593710777945" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1593710777944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824/-1920.-303.1920.1040@0.0.1536.824" timestamp="1592847775061" />
-    <state width="1478" height="206" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593686153556" />
-    <state width="1478" height="206" key="GridCell.Tab.0.right" timestamp="1593686153557">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593710777944" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1593710777945">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824/-1920.-303.1920.1040@0.0.1536.824" timestamp="1592847775062" />
-    <state width="1478" height="206" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593686153557" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593710777945" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1593342099309">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1593342099309" />
-    <state x="41" y="190" width="672" height="677" key="run.anything.popup" timestamp="1592924767340">
+    <state x="41" y="190" width="672" height="677" key="run.anything.popup" timestamp="1593706499508">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="41" y="190" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1592924767340" />
+    <state x="41" y="190" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593706499508" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1592924170073">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1592924170073" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Dijakstra.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

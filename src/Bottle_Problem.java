@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 public  class Bottle_Problem {
+    static final int inf  = Integer.MAX_VALUE;
 
     /**
      * find the right index for the initRibs
@@ -23,25 +24,24 @@ public  class Bottle_Problem {
      * @param m capacity of second bottle.
      * @return
      */
-    public static int[][] initRibs(int n, int m) {
+    public static boolean[][] initRibs(int n, int m) {
         int dim = (n + 1) * (m + 1);
-        int mat[][] = new int[dim][dim];
+        boolean mat[][] = new boolean[dim][dim];
         int ind1, ind2;
         for (int i = 0; i < n + 1; i++) {
             for (int j = 0; j < m + 1; j++) {
                 ind1 = getIndex(i, j, m);
-                mat[ind1][getIndex(0, j, m)] = 1;
-                mat[ind1][getIndex(n, j, m)] = 1;
-                mat[ind1][getIndex(i, 0, m)] = 1;
-                mat[ind1][getIndex(i, m, m)] = 1;
-
+                mat[ind1][getIndex(0, j, m)] = true;
+                mat[ind1][getIndex(n, j, m)] = true;
+                mat[ind1][getIndex(i, 0, m)] = true;
+                mat[ind1][getIndex(i, m, m)] = true;
                 ind2 = getIndex(Math.min(n, i + j), i + j - Math.min(n, i + j), m);
-                mat[ind1][ind2] = 1;
+                mat[ind1][ind2] = true;
                 ind2 = getIndex(i + j - Math.min(m, i + j), Math.min(m, i + j), m);
-                mat[ind1][ind2] = 1;
+                mat[ind1][ind2] = true;
             }
         }
-        for (int v = 0; v < dim; v++) mat[v][v] = 1;
+        for (int v = 0; v < dim; v++) mat[v][v] = true;
         return mat;
     }
 
@@ -80,19 +80,9 @@ public  class Bottle_Problem {
         }
     }
 
-//    public static void isConnected(boolean mat[][]){
-//        for (int i = 0; i <mat.length ; i++) {
-//            for (int j = 0; j <mat[0].length ; j++) {
-//                if(mat[i][j]!=mat[j][i])
-//            }
-//
-//        }
-//
-//    }
 
     /**
      * FW algorithem to find if is there any path between 2 vertices, True if there is False if there is'nt.
-     *
      * @param mat Boolean matrix that represent edegs.
      * @return boolean matrix that tell if two vertices have path. True if there is False if there is'nt.
      */
@@ -141,21 +131,7 @@ public  class Bottle_Problem {
         }
         return ans;
     }
-    public static int findNumComponents(boolean mat[][]){
-        int n = mat.length;
-        int arr[] = new int[n];
-        int counter= 0;
-        for (int i = 0; i <n ; i++) {
-            if(arr[i]==0){
-                counter++;
-                for (int j = 0; j <mat[0].length ; j++) {
-                    if(mat[i][j]) arr[j]=counter;
-                }
-            }
 
-        }
-        return counter;
-    }
 
     /**
      * Complexity: O(N^3)
@@ -186,36 +162,108 @@ public  class Bottle_Problem {
         return ans;
     }
 
-
     /**
-     * Find max value of sub array from a given array.
-     * Complexity: O(N^2)
-     * @param arr the array that we want to find the max sub array value.
-     * @return the max value of the sub array.
+     * O(n)-->need to check might be higher.
+     * find num of components in graph,
+     * @param mat FW matrix with true where is a path between 2 vertices.
+     * @return array that represent the components.
      */
-    public static int maxSubArr(int arr[]){
-        int n = arr.length;
-        int max = Integer.MIN_VALUE;
-        int mat[][] = new int[n+1][n+1];
-        mat[0][0]=0;
+    public static int[] findNumComponents(boolean[][] mat){
+        int n = mat.length;
+        int arr[] = new int[n];
+        int counter =0;
+        boolean flag = true;
         for (int i = 0; i <n ; i++) {
-            mat[i+1][i+1]=arr[i];
-            mat[0][i+1]=0;
-            mat[i+1][0]=0;
-        }
-        for (int i = 1; i <n+1 ; i++) {
-            for (int j = 1; j <n+1 ; j++) {
-                mat[i][j]=mat[i][j-1]+arr[j-1];
-                if(mat[i][j]>max) max = mat[i][j];
+            if(arr[i]==0){
+                flag = true;
+                for (int j = i+1; j <n ; j++) {
+                    if(arr[j]!=0 && mat[i][j]){
+                        arr[i]=arr[j];
+                        flag = false;
+                    }
+                }
+                if(flag){
+                    counter++;
+                    arr[i]= counter;
+                    for (int j = i+1; j <n ; j++) {
+                        if(arr[j]==0 && mat[i][j]) arr[j]=counter;
+                    }
+                }
             }
         }
-        return max;
+        String comp[] = new String[counter];
+        for (int i = 0; i <n ; i++) {
+            comp[arr[i]-1]+="," + i;
+        }
+        return arr;
+        //if want return num of components return counter;
+
+    }
+
+    /**
+     * with a FW given matrix if there is any negative value in the alcson then have negative cycle.
+     * @param mat matrix after FW that represent shortest paths.
+     * @return true if there is any negative cycle false otherwise.
+     */
+    public static boolean negativeCycle(int mat[][]){
+        boolean flag = false;
+        int n = mat.length;
+        for (int i = 0; i <n ; i++) {
+            if(mat[i][i]<0) flag = true;
+        }
+        return flag;
+    }
+
+    /**
+     * this algorithem find the shortest path in graph when weight is calculate by weight of vertices and not edges.
+     * @param mat matrix that represent connection between two vertices.
+     * @param vWeight array that represent weight of ea vertices.
+     * @return a matrix that represent min weight between 2 vertices.
+     */
+    public static int[][] weightOnV(boolean mat[][], int vWeight[]){
+        int n = mat.length;
+        int temp[][] = new int[n][n];
+        for (int i = 0; i <n ; i++) {
+            for (int j = 0; j <n ; j++) {
+                if(mat[i][j]) temp[i][j]= vWeight[i]+vWeight[j];
+                else temp[i][j] = inf;
+            }
+            temp[i][i] =vWeight[i];
+        }
+
+        int ans[][] = shortestPathFW(temp);
+        for (int i = 0; i <n ; i++) {
+            for(int j =0; j<n;j++){
+                ans[i][j]= (ans[i][j]+vWeight[i]+vWeight[j])/2;
+            }
+        }
+        return ans;
+    }
+
+    public static int[][] weightEV(int mat[][],int vWeight[]){
+        int n = mat.length;
+        int temp[][] = new int[n][n];
+        for (int i = 0; i <n ; i++) {
+            for (int j = 0; j <n ; j++) {
+                if(mat[i][j]!=inf) temp[i][j]=2*(mat[i][j])+vWeight[i]+vWeight[j];
+            }
+        }
+        int ans[][] = shortestPathFW(temp);
+        for (int i = 0; i <n ; i++) {
+            for(int j =0; j<n;j++){
+                ans[i][j]= (ans[i][j]+vWeight[i]+vWeight[j])/2;
+            }
+        }
+        return ans;
+
+
+
     }
 
 
 
     public static void main(String[] args) {
-        int arr[] = {3,-2,5,1};
+
 
     }
 }
