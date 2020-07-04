@@ -90,6 +90,14 @@ public class BFS {
         return true;
     }
 
+    public static boolean isConnectedArrayList(ArrayList<Integer> tree[]){
+        int dist[] = arrayListBFS(tree,0);
+        for (int i = 0; i <dist.length ; i++) {
+            if(dist[i]==inf) return false;
+        }
+        return true;
+    }
+
     /**
      * O(V+E)*2 = O(V+E).
      * algorithem to find the diameter of a graph(longest path between to vertices)

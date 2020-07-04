@@ -287,6 +287,48 @@ public class TestQuestions {
     //-------------------------------------------------Test 3-----------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------------
 
+
+    /**
+     * Question 1 Test3
+     * Time Complexity: O(E+V).
+     * find the minimum number of edges that will make the graph eulerian graph.
+     * @param tree represent the graph.
+     * @return the num of the edges.
+     */
+    public static int numOfEdgesToEuler(ArrayList<Integer> tree[]){
+        int counter =0;
+        int len = tree.length;
+        ArrayList<Integer> temp[] = copy(tree);
+        for (int i = 0; i <len ; i++) {
+            if(tree[i].size()%2==1) counter++;
+        }
+        if(BFS.isConnectedArrayList(temp)) return counter/2;
+        int CompEdge =numOfEvenComp(tree);
+        return CompEdge+counter/2;
+    }
+
+
+    private static int numOfEvenComp(ArrayList<Integer> tree[]){
+        int counter = 0;
+        int len = tree.length;
+        int color[] = new int[len];
+        int arr[] = new int[len];
+        boolean isEven=true;
+        for (int i = 0; i <len ; i++) {
+            color[i]=white;
+        }
+        for (int i = 0; i <len ; i++) {
+            Arrays.fill(arr,0);
+            isEven=true;
+            if(color[i]==white){
+                counter++;
+                arr=
+            }
+
+
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.println(numOfEdgesBP(2,1));
         System.out.println(Arrays.toString(degOfVerticesBP(2,1)));
