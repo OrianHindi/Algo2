@@ -228,7 +228,7 @@ public  class Bottle_Problem {
                 if(mat[i][j]) temp[i][j]= vWeight[i]+vWeight[j];
                 else temp[i][j] = inf;
             }
-            temp[i][i] =vWeight[i];
+            temp[i][i] =0;
         }
 
         int ans[][] = shortestPathFW(temp);
@@ -246,7 +246,9 @@ public  class Bottle_Problem {
         for (int i = 0; i <n ; i++) {
             for (int j = 0; j <n ; j++) {
                 if(mat[i][j]!=inf) temp[i][j]=2*(mat[i][j])+vWeight[i]+vWeight[j];
+                else temp[i][j]=inf;
             }
+            temp[i][i]=vWeight[i];
         }
         int ans[][] = shortestPathFW(temp);
         for (int i = 0; i <n ; i++) {
@@ -255,9 +257,13 @@ public  class Bottle_Problem {
             }
         }
         return ans;
+    }
 
-
-
+    public static int getI(int k, int n){
+        return k/(n+1);
+    }
+    public static int getJ(int k,int n){
+        return k%(n+1);
     }
 
 

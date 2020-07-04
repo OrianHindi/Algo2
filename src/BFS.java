@@ -1,10 +1,11 @@
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class BFS {
-    public static final int white=0,gray = 1,black=2;
+    public static final int white=0,gray = 1,black=2,inf=Integer.MAX_VALUE;
     /**
      * O(V+E)
      * BFS can tell us if the graph is connect, how much components, who is the components, find the koter of the graph.
@@ -37,6 +38,37 @@ public class BFS {
                 }
             }
             color[v]=black;
+        }
+        return dist;
+    }
+
+    public static int[] arrayListBFS(ArrayList<Integer> tree[],int source){
+        int n = tree.length;
+        int dist[] = new int[n];
+        int prev[] = new int[n];
+        int colors[] = new int[n];
+        for (int i = 0; i <n ; i++) {
+                colors[i]=white;
+                prev[i]=-1;
+                dist[i]=inf;
+        }
+        dist[source]=0;
+        colors[source]=gray;
+        Queue<Integer> q = new LinkedList<>();
+        q.add(source);
+        int v=0,u=0;
+        while(!q.isEmpty()){
+            v=q.poll();
+            for (int i = 0; i <tree[v].size() ; i++) {
+                u = tree[v].get(i);
+                if(colors[u]==white){
+                    colors[u]=gray;
+                    prev[u] = v;
+                    dist[u]= dist[v] +1;
+                    q.add(u);
+                }
+            }
+            colors[v]=black;
         }
         return dist;
     }

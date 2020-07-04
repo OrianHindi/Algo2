@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class Fire {
 
-    public static void fire(ArrayList<Integer>[] tree){
+    public static int fire(ArrayList<Integer>[] tree){
         int n = tree.length;
         int nvert=n;
         Queue<Integer> leaves= new LinkedList<>();
@@ -43,5 +43,6 @@ public class Fire {
             diameter=2*radius;
         }
         System.out.println("Radius:" + radius + "\t Diameter:" + diameter + "\t centers:" + center.toString());
+        return diameter;
     }
 }
