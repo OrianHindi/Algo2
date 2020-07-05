@@ -134,7 +134,7 @@ public class BFS {
         int n = mat.length;
         int counter = 1;
         int colors[];
-        int arr[] = new int[n];
+        int arr[] = new int[n+1];
         for (int i = 0; i <n ; i++) {
             if(arr[i]==0){
                 colors = BFS(mat,i);
@@ -146,7 +146,19 @@ public class BFS {
                 counter++;
             }
         }
+        arr[n]= counter;
         return arr;
+    }
+
+    public static int[] findverBFS(int arr[]){
+        int counter = arr[arr.length-1];
+        int ans[] = new int[counter];
+        for (int i = 0; i <arr.length-1 ; i++) {
+            ans[arr[i]-1]++;
+        }
+        Arrays.sort(ans);
+        return ans;
+
     }
     public static void printPath(boolean[][] mat,int source,int dest){
         int prev[] = BFS(mat,source);
@@ -169,14 +181,19 @@ public class BFS {
 
 
     public static void main(String[] args) {
-        boolean[][] graph = {{false,false,false,true,false,false,false},
-                {false,false,false,true,true,true,false},
-                {false,false,false,true,true,true,false},
-                {true,true,true,false,false,false,false},
-                {false,true,true,false,false,false,false},
-                {false,true,true,false,false,false,false},
-                {false,false,false,false,false,false,false}};
+        boolean[][] graph = {{true,true,false,false,false,false,false,false,false},
+                {true,true,false,false,false,false,false,false,false},
+                {false,false,true,false,false,false,false,false,false},
+                {false,false,false,true,true,true,false,false,false},
+                {false,false,false,true,true,true,false,false,false},
+                {false,false,false,true,true,true,true,false,false},
+                {false,false,false,false,false,true,true,true,true},
+                {false,false,false,false,false,false,true,true,false},
+                {false,false,false,false,false,false,true,false,true},
+        };
 
+        int arr[] = findverBFS(findComponents(graph));
+        System.out.println(Arrays.toString(arr));
         printPath(graph,0,5);
 
     }
