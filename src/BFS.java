@@ -39,7 +39,7 @@ public class BFS {
             }
             color[v]=black;
         }
-        return dist;
+        return color;
     }
 
     public static int[] arrayListBFS(ArrayList<Integer> tree[],int source){
@@ -146,11 +146,12 @@ public class BFS {
                 counter++;
             }
         }
-        arr[n]= counter;
+        arr[n]= counter-1;
         return arr;
     }
 
     public static int[] findverBFS(int arr[]){
+
         int counter = arr[arr.length-1];
         int ans[] = new int[counter];
         for (int i = 0; i <arr.length-1 ; i++) {
@@ -181,17 +182,17 @@ public class BFS {
 
 
     public static void main(String[] args) {
-        boolean[][] graph = {{true,true,false,false,false,false,false,false,false},
-                {true,true,false,false,false,false,false,false,false},
-                {false,false,true,false,false,false,false,false,false},
-                {false,false,false,true,true,true,false,false,false},
-                {false,false,false,true,true,true,false,false,false},
-                {false,false,false,true,true,true,true,false,false},
-                {false,false,false,false,false,true,true,true,true},
-                {false,false,false,false,false,false,true,true,false},
-                {false,false,false,false,false,false,true,false,true},
+        boolean[][] graph = {{true,true,false,false,false,false,false,false,false,false},
+                {true,true,false,false,false,false,false,false,false,false},
+                {false,false,true,false,false,false,false,false,false,false},
+                {false,false,false,true,true,true,false,false,false,false},
+                {false,false,false,true,true,true,false,false,false,false},
+                {false,false,false,true,true,true,false,false,false,false},
+                {false,false,false,false,false,false,true,true,false,false},
+                {false,false,false,false,false,false,true,true,true,true},
+                {false,false,false,false,false,false,false,true,true,false},
+                {false,false,false,false,false,false,false,true,false,true},
         };
-
         int arr[] = findverBFS(findComponents(graph));
         System.out.println(Arrays.toString(arr));
         printPath(graph,0,5);
